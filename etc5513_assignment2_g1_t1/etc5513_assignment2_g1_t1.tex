@@ -1,0 +1,655 @@
+\documentclass[11pt,a4paper,]{article}
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={The Global War Against Cancer},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{a4paper, centering, text={16cm,25cm}}
+\usepackage[style=authoryear-comp,]{biblatex}
+\addbibresource{references.bib}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{The Global War \newline Against Cancer\huge}
+
+%% MONASH STUFF
+
+%% CAPTIONS
+\RequirePackage{caption}
+\DeclareCaptionStyle{italic}[justification=centering]
+ {labelfont={bf},textfont={it},labelsep=colon}
+\captionsetup[figure]{style=italic,format=hang,singlelinecheck=true}
+\captionsetup[table]{style=italic,format=hang,singlelinecheck=true}
+
+
+%% FONT
+\RequirePackage{bera}
+\RequirePackage[charter,expert,sfscaled]{mathdesign}
+\RequirePackage{fontawesome}
+
+%% HEADERS AND FOOTERS
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\rfoot{\Large\sffamily\raisebox{-0.1cm}{\textbf{\thepage}}}
+\makeatletter
+\lhead{\textsf{\expandafter{\@title}}}
+\makeatother
+\rhead{}
+\cfoot{}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\sffamily\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+%% MATHS
+\RequirePackage{bm,amsmath}
+\allowdisplaybreaks
+
+%% GRAPHICS
+\RequirePackage{graphicx}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.8}
+
+
+%\RequirePackage[section]{placeins}
+
+%% SECTION TITLES
+
+
+%% SECTION TITLES
+\RequirePackage[compact,sf,bf]{titlesec}
+\titleformat*{\section}{\Large\sf\bfseries\color[rgb]{0.7,0,0}}
+\titleformat*{\subsection}{\large\sf\bfseries\color[rgb]{0.7,0,0}}
+\titleformat*{\subsubsection}{\sf\bfseries\color[rgb]{0.7,0,0}}
+\titlespacing{\section}{0pt}{2ex}{.5ex}
+\titlespacing{\subsection}{0pt}{1.5ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{.5ex}{0ex}
+
+
+%% TITLE PAGE
+\def\Date{\number\day}
+\def\Month{\ifcase\month\or
+ January\or February\or March\or April\or May\or June\or
+ July\or August\or September\or October\or November\or December\fi}
+\def\Year{\number\year}
+
+%% LINE AND PAGE BREAKING
+\sloppy
+\clubpenalty = 10000
+\widowpenalty = 10000
+\brokenpenalty = 10000
+\RequirePackage{microtype}
+
+%% PARAGRAPH BREAKS
+\setlength{\parskip}{1.4ex}
+\setlength{\parindent}{0em}
+
+%% HYPERLINKS
+\RequirePackage{xcolor} % Needed for links
+\definecolor{darkblue}{rgb}{0,0,.6}
+\RequirePackage{url}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
+\makeatother
+\hypersetup{
+     citecolor=0 0 0,
+     breaklinks=true,
+     bookmarksopen=true,
+     bookmarksnumbered=true,
+     linkcolor=darkblue,
+     urlcolor=blue,
+     citecolor=darkblue,
+     colorlinks=true}
+
+\usepackage[showonlyrefs]{mathtools}
+\usepackage[no-weekday]{eukdate}
+
+%% BIBLIOGRAPHY
+
+\makeatletter
+\@ifpackageloaded{biblatex}{}{\usepackage[style=authoryear-comp, backend=biber, natbib=true]{biblatex}}
+\makeatother
+\ExecuteBibliographyOptions{bibencoding=utf8,minnames=1,maxnames=3, maxbibnames=99,dashed=false,terseinits=true,giveninits=true,uniquename=false,uniquelist=false,doi=false, isbn=false,url=true,sortcites=false}
+
+\DeclareFieldFormat{url}{\texttt{\url{#1}}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+%\DeclareFieldFormat[book]{url}{}
+%\DeclareFieldFormat[inbook]{url}{}
+%\DeclareFieldFormat[incollection]{url}{}
+%\DeclareFieldFormat[inproceedings]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+%\DeclareFieldFormat{extrayear}{}
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+
+\makeatletter
+\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+\makeatother
+
+\author{\sf{\Large\textbf{Arindam Baruah}\\\large \href{mailto:abar0090@student.monash.edu}{\nolinkurl{abar0090@student.monash.edu}}\\[0.5cm]}{\Large\textbf{Alexandra Goh}\\\large \href{mailto:agoh0008@student.monash.edu}{\nolinkurl{agoh0008@student.monash.edu}}\\[0.5cm]}{\Large\textbf{Evan Ginting}\\\large \href{mailto:egin0003@student.monash.edu}{\nolinkurl{egin0003@student.monash.edu}}\\[0.5cm]}{\Large\textbf{Hardik Dixit}\\\large \href{mailto:hdix0003@student.monash.edu}{\nolinkurl{hdix0003@student.monash.edu}}\\[0.5cm]}}
+
+\date{\sf\Date~\Month~\Year}
+\makeatletter
+\lfoot{\sf Baruah, Goh, Ginting, Dixit: \@date}
+\makeatother
+
+
+%%%% PAGE STYLE FOR FRONT PAGE OF REPORTS
+
+\makeatletter
+\def\organization#1{\gdef\@organization{#1}}
+\def\telephone#1{\gdef\@telephone{#1}}
+\def\email#1{\gdef\@email{#1}}
+\makeatother
+  \organization{ETC 5513 Assignment 2}
+
+  \def\name{Department of\newline Econometrics \&\newline Business Statistics}
+
+  \telephone{(03) 9905 2478}
+
+  \email{BusEco-Econometrics@monash.edu}
+
+\def\webaddress{\url{http://buseco.monash.edu/ebs/consulting/}}
+\def\abn{12 377 614 012}
+\def\extraspace{\vspace*{1.6cm}}
+\makeatletter
+\def\contactdetails{\faicon{phone} & \@telephone \\
+                    \faicon{envelope} & \@email}
+\makeatother
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+
+%%%% FRONT PAGE OF REPORTS
+
+\def\reporttype{Report for}
+
+\long\def\front#1#2#3{
+\newpage
+\begin{textblock}{7}(12.7,28.2)\hfill
+\includegraphics[height=0.6cm]{AACSB}~~~
+\includegraphics[height=0.6cm]{EQUIS}~~~
+\includegraphics[height=0.6cm]{AMBA}
+\end{textblock}
+\begin{singlespacing}
+\thispagestyle{empty}
+\vspace*{-1.4cm}
+\hspace*{-1.4cm}
+\hbox to 16cm{
+  \hbox to 6.5cm{\vbox to 14cm{\vbox to 25cm{
+    \includegraphics[width=6cm]{monash2}
+    \vfill
+    \includegraphics[width=3.5cm]{MBSportrait}
+    \vspace{0.4cm}
+    \par
+    \parbox{6.3cm}{\raggedright
+      \sf\color[rgb]{0.00,0.00,0.70}
+      {\large\textbf{\name}}\par
+      \vspace{.7cm}
+      \tabcolsep=0.12cm\sf\small
+      \begin{tabular}{@{}ll@{}}\contactdetails
+      \end{tabular}
+      \vspace*{0.3cm}\par
+      ABN: \abn\par
+    }
+  }\vss}\hss}
+  \hspace*{0.2cm}
+  \hbox to 1cm{\vbox to 14cm{\rule{1pt}{26.8cm}\vss}\hss\hfill}
+  \hbox to 10cm{\vbox to 14cm{\vbox to 25cm{
+      \vspace*{3cm}\sf\raggedright
+      \parbox{11cm}{\sf\raggedright\baselineskip=1.2cm
+         \fontsize{24.88}{30}\color[rgb]{0.70,0.00,0.00}\sf\textbf{#1}}
+      \par
+      \vfill
+      \large
+      \vbox{\parskip=0.8cm #2}\par
+      \vspace*{2cm}\par
+      \reporttype\\[0.3cm]
+      \hbox{#3}%\\[2cm]\
+      \vspace*{1cm}
+      {\large\sf\textbf{\Date~\Month~\Year}}
+   }\vss}
+  }}
+\end{singlespacing}
+\newpage
+}
+
+\makeatletter
+\def\titlepage{\front{\expandafter{\@title}}{\@author}{\@organization}}
+\makeatother
+
+\usepackage{setspace}
+\setstretch{1.5}
+
+%% Any special functions or other packages can be loaded here.
+
+
+\begin{document}
+\titlepage
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{executive-summary}{%
+\section{Executive Summary}\label{executive-summary}}
+
+Cancer is one of the leading causes of morbidity and mortality worldwide. While the fight against cancer started through the \href{https://www.cancer.gov/about-nci/overview/history/national-cancer-act-1971}{National Cancer Act in 1971}, the world still experiences \textbf{about ten million deaths a year} due to this disease. Statistically, every sixth death can be attributed to cancer based on the study by \textcite{436429c1dfa446128cae9bc82b120952}. This report is a global study on cancer prevalence and mortality rates across generations, by utilizing publicly available datasets to analyze cancer death rates across different cancer types, age groups and countries.
+
+While the fight against cancer is expected to be a drawn-out battle, it is prudent to understand the key statistics that would allow one to gauge the progress made by the Oncological Research Centers around the world against this deadly disease.
+
+Some of the key findings of the current study are delineated below:
+
+\begin{itemize}
+\item
+  Cancer deaths increase with age, with the ``70+'' age group reporting the highest average cancer mortality rate worldwide. Temporal analysis also shows that cancer deaths have increased over time for older age groups, particularly for those aged 70 years and above.
+\item
+  Considerable regional variations in cancer type prevalence have been observed, with lung cancer being most common in high-income nations such as Australia, USA, Canada and India.
+\item
+  There is a positive correlation between sales of cigarettes and lung cancer death rates, meaning that higher sales is associated with a greater number of deaths.
+\item
+  While cancer deaths in 2019 have risen by 73\% since the year of 1990, the world has observed a global drop in age-standardized death rates by 6\% within the same time period, thereby marking a slow but significant progress against cancer.
+\end{itemize}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Cancer has long been considered as one of the leading healthcare problems globally, with every one person in seven dying of this disease in Australia as per \textcite{canceraussie}. Based on the data from \href{https://www.canceraustralia.gov.au/impacted-cancer/what-cancer/cancer-australia-statistics}{Cancer Australia} the number of new cases of cancer diagnosed was found to rise from 47,414 in 1982 to 146,335 cases in 2018. A similar rise of cancer deaths has also been observed globally, making cancer one of the leading areas of intense research. Furthermore, according to \textcite{AGGARWAL20161040}, lung cancer alone accounts for approximately 20\% of total cancer mortality rates, estimated to be 1.6 million cancer deaths annually. Hence, understanding the impact of cancer among various cancer types, age groups, and regions is crucial for reducing the global burden of cancer.
+
+Based on the data from \textcite{doi:10.1513/pats.200809-100TH}, it is widely known that smoking cigarettes is one of the major risks leading to lung cancer, accounting for almost 90\% of lung cancer in men and 70\% to 80\% in women. In 2020, the outbreak of the COVID-19 pandemic had an adverse effect on the diagnosis and treatment of cancer as the healthcare industry was overburdened globally. This led to a short-term decrease in the number of early cancer diagnoses, resulting in an increase in both the number of cases diagnosed at advanced stages and mortality rates as reported by \textcite{yabroff2022association}.
+
+Unfortunately, the sale of cigarettes continues to be rampant in multiple countries, despite the multitude of initiatives undertaken to create awareness among the general population. The majority of cancer deaths take place in low and middle-income nations, where the burden of cancer is particularly heavy due to lack of appropriate healthcare infrastructure. Cancer has major economic and societal consequences, such as the price of treatment, lost productivity, and lowered quality of life for patients and their families.
+
+This report therefore aims to provide a global perspective on cancer prevalence and mortality rates across generations. The epidemiology of cancer can be better understood by understanding how cancer fatalities are distributed by kind, which will also help guide efforts to prevent and treat this disease. Based on the current analysis, the major cancer types in various nations have been identified which would allow for governments and health organizations to set priorities and allocate the required resources. Furthermore, as lung cancer was observed to be one of the major causes of concern in the healthcare industry, the study aims to explore the relationship between cigarettes sales and lung cancer death rate. Lastly, to understand the global progress for cancer treatment made by various cancer research centers, three critical metrics were evaluated to obtain a holistic picture of the global efforts taken to cure this deadly disease. These measures are: \textbf{the number of deaths, crude death rate and age-standardized death rate}.
+
+\hypertarget{methodology}{%
+\section{Methodology}\label{methodology}}
+
+\hypertarget{cancer-by-age}{%
+\subsection{Cancer by Age}\label{cancer-by-age}}
+
+Two publicly available datasets relating to global cancer deaths were obtained from the \href{https://ourworldindata.org/cancer}{``Our World in Data''} website. The \href{https://ourworldindata.org/grapher/cancer-death-rates-by-age}{first dataset} represents cancer death rates (i.e.~number of cancer deaths per 100,000 people of the same age group per year) for each country whilst the \href{https://ourworldindata.org/grapher/cancer-deaths-by-age?stackMode=relative}{second dataset} contains each country's total annual cancer deaths differentiated by broad age category.
+
+These datasets were selected based on their relevance to the following research questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How has the distribution of cancer death rates across different age groups changed over time?
+\item
+  Which countries have the highest cancer deaths for the most affected age group?
+\end{enumerate}
+
+The most recent year available (except for time trends) was also selected as the base year, to ensure that the most up-to-date information is being analysed.
+
+To discover patterns, trends or relationships in the data, exploratory analysis was primarily used as well as descriptive statistics and data visualization techniques. A quick overview of cancer deaths across age groups in 2019 can be seen in Table \ref{tab:tableref}:
+
+\begin{table}
+
+\caption{\label{tab:tableref}Mean Cancer Death Rate by Age Group in 2019 (measured as number of cancer deaths per 100,000 people)}
+\centering
+\begin{tabular}[t]{c|c|c|c|c}
+\hline
+Under 5 years old & 5-14 years old & 15-49 years old & 50-69 years old & 70+ years old\\
+\hline
+5.727206 & 4.020049 & 28.64691 & 307.088 & 1062.782\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Based on Table \ref{tab:tableref}, it was observed that across all the 204 countries observed, the `70+ years' age group had the highest average cancer mortality rate.
+\item
+  Of people who are 70 years and older worldwide, more than 1\% (i.e.~approximately 1063 per 100,000) died from cancer in 2019.
+\end{itemize}
+
+Taking this into account, a time series analysis was then conducted to study changes in cancer deaths by age group over time.
+
+\begin{figure}
+\centering
+\includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/worldmap-1.pdf}
+\caption{\label{fig:worldmap}World Map of All Countries}
+\end{figure}
+
+Finally, the geographic distribution of cancer deaths for the most impacted age group is visually represented through a global spatial map. This involved downloading the \href{https://hub.arcgis.com/datasets/esri::world-countries-generalized/explore?location=-0.131846\%2C0.000000\%2C2.00}{``World Countries Generalized''} dataset to obtain specific location coordinates for each country. After removing zero/minus values from the `world\_map' spatial object and merging it with the first dataset, a world map plot was generated as seen in figure \ref{fig:worldmap}, which would later be used in the geographic distribution analysis.
+
+\hypertarget{cancer-by-type}{%
+\subsection{Cancer by Type}\label{cancer-by-type}}
+
+The analysis covers the period between 1990 to 2016 and provides statistics on cancer deaths by type based on the \href{https://ourworldindata.org/grapher/cancer-deaths-by-type-grouped}{cancer mortality dataset} from the Our World in Data website. These are broken down into broad categories such as lung, liver, stomach and breast cancer.
+
+After importing the data, the dataset was cleaned to eliminate any invalid or missing entries. The data was then filtered to include only major countries with the highest GDPs. This was followed by a computation of the percentage of each type of cancer in relation to the overall number of cancer deaths per year.
+
+To visualise the distribution of cancer mortality by type over time, a stacked bar chart (as seen in figure \ref{fig:dataadd}) was utilised. This chart displays the occurrences of each form of cancer among all cancer fatalities, facilitating a comparison of the contribution of each type of cancer to the overall burden of cancer in the year 2016.
+
+\begin{figure}
+\centering
+\includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/dataadd-1.pdf}
+\caption{\label{fig:dataadd}Average Cancer Death Rates by Type (2016)}
+\end{figure}
+
+\hypertarget{lung-cancer-sales-of-cigarettes}{%
+\subsection{Lung Cancer \& Sales of Cigarettes}\label{lung-cancer-sales-of-cigarettes}}
+
+This section uncovers the relationship between lung cancer death rates (annually) with the daily sales of cigarettes (annually). Two research questions that will be the main focus of this analysis are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do the sales of cigarettes have any correlation to increasing/decreasing lung cancer death rates ?
+\item
+  How is the relationship between both variables ?
+\end{enumerate}
+
+In performing the analysis, the dataset containing annual lung cancer death rates and daily average sales of cigarettes will be utilised, which can be accessed from the \href{https://ourworldindata.org/cancer\#smoking-and-lung-cancer}{Our World in Data website}. Before the analysis, an overview of the current death rate profile over the years is presented.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{etc5513_assignment2_g1_t1_files/figure-latex/figure1-1} 
+
+}
+
+\caption{Annual Death Rate of Lung Cancer from 1950 to 2020.}\label{fig:figure1}
+\end{figure}
+
+Based on figure \ref{fig:figure1}, there is a gradual increase of lung cancer death rates from 1950 until 1988, followed by a gradual decrease after 1988 until 2020. The influence of cigarette sales on these gradual increases/decreases are explained further in the results.
+
+To further support the analysis, a new graph will be included using a statistical technique called ``smoothing''. This graph is a scatter plot that presents a smooth curve, providing a more accurate representation of the relationship between the sale of cigarettes and lung cancer death rates. The smooth curve will assist in validating the analysis and ensure the findings are more reliable.
+
+Table \ref{tab:table1} is a preview of the dataset that will be used in this analysis, ranging from the year, the average death rates of lung cancer, and the average sales of cigarettes daily, which reveals the relationship between cigarette sales and lung cancer death rates.
+
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:table1}Preview of the dataset with variables of year, average sales of cigarettes daily, and the average death rates of lung cancer.}
+\centering
+\begin{tabular}[t]{lrr}
+\toprule
+Year & Average Daily Cigarettes Sales & Average Death Rates\\
+\midrule
+1950 & 4.491304 & 10.57\\
+1951 & 4.439131 & 9.46\\
+1952 & 4.617391 & 10.94\\
+1953 & 4.672000 & 11.33\\
+1954 & 4.717391 & 12.29\\
+\addlinespace
+1955 & 5.120833 & 11.80\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{is-the-world-making-progress-against-cancer}{%
+\subsection{Is the World Making Progress Against Cancer?}\label{is-the-world-making-progress-against-cancer}}
+
+The current study utilizes three major metrics to understand the global progress in the fight against cancer:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Cancer deaths
+\item
+  Cancer death rate (\textbf{Non age standardized})
+\item
+  Cancer death rate (\textbf{Age standardized})
+\end{enumerate}
+
+While usage of crude statistics such as absolute number of deaths and rate of deaths allows us to understand the overall loss of lives as a result of cancer, it is heavily affected by the number of people constituted in each age group. As age distributions drastically differ for the global population with lesser number of elderly population above the age of 80 years as compared to the younger population, hence, a statistical treatment is required which would allow for us to adjust the crude rate in order to eliminate the effect of differences in population age structures when comparing crude rates for different periods of time, different geographic areas or different population sub-groups. As a result, in Epidemiology, \textbf{age standardized death rates} are calculated to study the overall progress of treatments against diseases.
+
+\begin{figure}
+\includegraphics[width=450px,height=150px]{figs/image2} \caption{Age standardisation process}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+Based on \href{https://meteor.aihw.gov.au/content/327276}{The Australian Institute of Health and Welfare}, the direct method for age-standardization rate is calculated as below:
+
+\[Standardisation\;rate = \frac{\sum(r_iP_i)}{\sum{P_i}}\]
+
+Where,
+
+\(r_i =\) is the age-group specific rate for age group i in the population being studied.
+
+\(P_i =\) is the population of age group i in the standard population.
+
+\begin{table}
+
+\caption{\label{tab:ratecalc}Countries with highest mean death rates}
+\centering
+\begin{tabular}[t]{lrr}
+\toprule
+Country & Mean standardized death rate & Mean crude death rate\\
+\midrule
+Monaco & 229 & 559\\
+Hungary & 214 & 343\\
+Scotland & 190 & 322\\
+Denmark & 182 & 310\\
+Wales & 167 & 309\\
+\addlinespace
+San Marino & 178 & 305\\
+Germany & 157 & 297\\
+Italy & 151 & 295\\
+Belgium & 165 & 290\\
+Croatia & 173 & 283\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+
+{\centering \includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/boxplot-1} 
+
+}
+
+\caption{Distribution of crude and standardized age deaths}\label{fig:boxplot}
+\end{figure}
+
+While \textbf{the mean crude death rates are observed to rise as a result of greater population, the mean standardized death rates are however considerably lower} for countries with high death rates as observed through Table \ref{tab:ratecalc}. This phenomenon can be clearly observed through the distribution of these variables as illustrated by the boxplots in figure \ref{fig:boxplot} where the \textbf{outliers for crude death rates are considerably higher than those for age standardized death rates}.
+
+\hypertarget{results}{%
+\section{\texorpdfstring{Results \label{section:results}}{Results }}\label{results}}
+
+\hypertarget{cancer-by-age-1}{%
+\subsection{Cancer by Age}\label{cancer-by-age-1}}
+
+Figure \ref{fig:linegraph} illustrates the number of cancer deaths in different age groups worldwide over a 29-year period. Based on the line graph, it's evident that cancer deaths increased with age. Both ``50-69'' and ``70+'' age groups exhibited a clear upward trend between the years 1990-2019, whilst younger age groups (i.e.~those aged under 5 years, 5-14 years and 15-49 years) showed relatively stable trends with significantly fewer cancer deaths compared to the older age groups. However, one interesting observation is that between 1990-1998, the ``50-69'' age group had the highest number of cancer deaths before being surpassed by the ``70+'' age group thereafter. Moreover, the line representing ``70+ years old'' portrayed a steeper upward trend compared to ``50-69 years'' from 1995 onwards, indicating a more rapid increase in cancer deaths over time for people aged 70+ years and above.
+
+\begin{figure}
+\centering
+\includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/linegraph-1.pdf}
+\caption{\label{fig:linegraph}Total Cancer Deaths by Age Group over Time (for global population)}
+\end{figure}
+
+With cancer deaths being more prevalent in older age groups, we then identified countries with the highest cancer death rates (i.e.~number of cancer deaths per 100,000 people) for people 70+ years and older. According to figure \ref{fig:figure2}, some of the top countries in 2019 were Greenland, Mongolia, United Kingdom, Netherlands, San Marino, Andorra, Monaco, Uruguay, Dominica and Barbados. It appears that majority of the affected countries were smaller ones with relatively low population densities, compared to larger countries such as Brazil and China. Additionally, we also found that Australia, European and North American countries experienced higher cancer mortality rates compared to countries in Africa and Asia.
+
+\begin{figure}
+\centering
+\includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/figure2-1.pdf}
+\caption{\label{fig:figure2}Countries with Highest Cancer Death Rates for People Aged 70+ Years and Over, measured as number of cancer deaths per 100,000 people (2019)}
+\end{figure}
+
+Section \ref{section:cancertype} examines overall cancer death rates by type in countries previously identified as having high cancer deaths rates among older populations. These cancer types range from lung, breast, kidney, to brain cancer. Furthermore, this section offers additional insights into which types of cancer are observed to record the highest and lowest mortality rates.
+
+\hypertarget{cancer-by-type-1}{%
+\subsection{\texorpdfstring{Cancer by Type \label{section:cancertype}}{Cancer by Type }}\label{cancer-by-type-1}}
+
+The number of lung, breast, kidney, and brain cancer fatalities in USA, India, China, and Australia is depicted in the bar plot . Only these nations and cancer types from the initial dataset were included in the data after it had been filtered.
+
+The figure illustrates that lung cancer is the primary cause of cancer fatalities in all four nations, with China having the highest death toll (over 500,000) and Australia having the lowest (about 7,000). Breast cancer is the second most prevalent type of cancer to cause death, with over 80,000 fatalities occurring in India and only 3,000 in Australia. Compared to lung and breast cancers, deaths from kidney and brain malignancies are significantly lower in each of the four countries.
+
+Due to its identification as the leading cancer type, lung cancer will be the subject of further investigation in section \ref{section:lungcancer}. The analysis will dive deeper into the reasons for lung cancer prevalence and explore the impact of cigarette sales on its rising mortality rates. By examining sales data of cigarettes, the analysis aims to shed light on the correlation between cigarette sales and the increasing number of lung cancer deaths.
+
+\hypertarget{lung-cancer-sales-of-cigarettes-1}{%
+\subsection{\texorpdfstring{Lung Cancer \& Sales of Cigarettes \label{section:lungcancer}}{Lung Cancer \& Sales of Cigarettes }}\label{lung-cancer-sales-of-cigarettes-1}}
+
+This analysis looks at the relationship between lung cancer death rates and daily sales of cigarettes by examining their trend over the years. It is depicted through a scatter plot that will further validate the relationship of these two variables.
+
+\textbf{The trend is visualised in below graph:}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{etc5513_assignment2_g1_t1_files/figure-latex/Trend1-1} 
+
+}
+
+\caption{The Trend of Lung Cancer Death Rates and Sales of Cigarettes.}\label{fig:Trend1}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Figure \ref{fig:Trend1} showcases the trend of cigarette sales and lung cancer death rates. As can be seen, when cigarette sales increase, the death rate tends to also increase. This condition also applies in reverse, whereby a fall in cigarette sales is followed by lower death rates not long after. This could be the first indication of a positive relationship between these two variables. Figure \ref{fig:CorrViz} provides a more comprehensive examination of the connection between these two variables, allowing for a deeper understanding of their relationship.
+\end{itemize}
+
+\textbf{The smoothing technique can be seen in below graph:}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{etc5513_assignment2_g1_t1_files/figure-latex/CorrViz-1} 
+
+}
+
+\caption{The correlation between Lung Cancer Death Rates with Sales of Cigarettes.}\label{fig:CorrViz}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Figure \ref{fig:CorrViz} shows a scatter plot graph that illustrates the relationship between lung cancer death rates and the average daily number of cigarettes sold. The blue curve line in the graph represents a smoothed trend line that outlines the correlation between these two variables. Since the curve line is upward sloping, this indicates a positive correlation between the variables, meaning as the average daily number of cigarettes sold increases, lung cancer death rates tend to increase as well. This supports what was previously mentioned in Figure \ref{fig:Trend1} where cigarettes sales and lung cancer death rates were found to be directly related.
+\end{itemize}
+
+With the multitude of initiatives to fight cancer, how far has the world progressed in its ability to combat cancer? Is there an overall decline in cancer deaths? Has the situation improved for all nations irrespective of their economic status? Section \ref{section:improve} explains how various initiatives have impacted global cancer metrics.
+
+\hypertarget{is-the-world-making-progress-against-cancer-1}{%
+\subsection{\texorpdfstring{Is the World Making Progress Against Cancer? \label{section:improve}}{Is the World Making Progress Against Cancer? }}\label{is-the-world-making-progress-against-cancer-1}}
+
+\begin{figure}
+
+{\centering \includegraphics{etc5513_assignment2_g1_t1_files/figure-latex/lineplot-1} 
+
+}
+
+\caption{Change in cancer mortality metrics from 1990 to 2019}\label{fig:lineplot}
+\end{figure}
+
+In order to obtain a holistic understanding of the global progress against cancer, it is important to assess multiple metrics. Based on the current study, the key findings obtained through figure \ref{fig:lineplot} are as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Cancer deaths} were observed to \textbf{rise by approximately 73\% globally} since 1990. However, this is not entirely unexpected as greater deaths related to cancer are \textbf{reported due to a growing population}. While a rise in the number of cancer deaths is not ideal, it also suggests that a greater proportion of deaths were not attributed to cancer due to a higher global population. Hence, absolute number of deaths may not be a reliable metric to assess the cancer treatment progress globally.
+\item
+  \textbf{Non-age standardized death rate} due to cancer was observed to \textbf{rise by approximately 30\%}. In order to account for the rising population, death rates are statistically calculated for the number of cancer deaths for every 100,000 people. This plot illustrates that \textbf{if the global population would have been constant, death rates as a result of cancer would have risen by 30\% instead of 73\%}.
+\item
+  \textbf{Age standardized death rate} due to cancer was observed to \textbf{drop by 6\%} since 1990. As cancer majorly causes deaths in older population of ages 70 years or older, hence, it is important to study the age-standardized death rate metric. As age is an important contributor to cancer deaths, an age-standardized death rate would allow for correcting the age-profile variations within the same time period. Therefore, the plot in figure \ref{fig:lineplot} indicates that \textbf{if the age profiles would have remained uniform across the time period and countries, death rates would have reduced by 6\% since 1990 instead of rising to 73\%}.
+\end{enumerate}
+
+\hypertarget{discussion-conclusion-and-recommendations}{%
+\section{Discussion, Conclusion, and Recommendations}\label{discussion-conclusion-and-recommendations}}
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+To summarize, cancer deaths are more prevalent in older age groups, as shown by rising trends in the ``50-69'' and ``70+'' age groups over time. Countries with relatively small populations, such as Greenland and Mongolia, are also revealed to have higher cancer death rates among the elderly population; hence, special attention should be given to these countries in terms of targeted interventions and resources for cancer prevention and control.
+
+Yet, while age is a well-established risk factor for cancer, it is not the only one. This report does not capture the influence of socioeconomic and cultural factors (e.g.~income, education, access to healthcare) on cancer risk and outcomes. Further research should also be conducted to better understand the significance of other risk factors such as tobacco and alcohol use, family genetics, exposure to carcinogens, unhealthy diets, and lack of physical activity. This could help in developing more comprehensive cancer prevention and control strategies.
+
+Among the most prevalent types of cancer in USA, India, China and Australia, lung cancer poses a significant public health concern. Additionally, breast, kidney, and brain cancers also contribute to cancer mortality in these nations.
+
+While lung cancer may not result solely from smoking behaviour, smoking is one of the greatest factors contributing to its development. Based on the analysis results, we can conclude that there is a positive correlation between sales of cigarettes and lung cancer death rates, meaning that higher sales is associated with a greater number of deaths.
+
+The report therefore evaluates three major metrics for the period between 1990 to 2019 as outlined in section \ref{section:results}. Based on the findings, it can be inferred that while the absolute values of cancer deaths have risen by 73\% since 1990, the non-age- standardized cancer death rates per 100,000 people rose only by 30\% while the age-standardized cancer death rates dropped by 6\%. These show that cancer death rates are governed majorly by population growth and population age distribution.
+
+The data illustrated in figure 7 also indicates a slow progress made against cancer globally. This could be related to a drop in tobacco consumption, particularly in the richer countries as per the \href{https://www.who.int/news/item/16-11-2021-tobacco-use-falling-who-urges-countries-to-invest-in-helping-more-people-to-quit-tobacco}{World Health Organisation}.
+
+While cancer is one of the leading causes of fatal health problems which have involved significant global investment to solve, a 6\% drop in death rate \textbf{implies a slow but significant progress for humankind}. Greater progress in preventing cancer fatalities have been observed for richer countries than the poorer countries. In this global war against cancer, it is important to be \textbf{inclusive} and help poor countries through state of the art technologies aswell as for the economically affluent countries to keep pushing the boundaries in the various frontiers of cancer research.
+
+\hypertarget{recommendations}{%
+\subsection{Recommendations}\label{recommendations}}
+
+Overall, public health initiatives should aim to prevent and detect these malignancies, while further investigation is needed to determine the causes of the cancer rates and prognoses in these nations.
+
+For instance, cancer prevention and early detection efforts in older age groups should be prioritized. Policy makers and healthcare professionals should look towards providing more targeted screening programs, education on cancer risk factors and healthy lifestyle choices, as well as improved access to appropriate healthcare services for the elderly population.
+
+There are also multiple suggestions for policy makers to reduce lung cancer mortality. One effective measure is imposing higher taxes on cigarettes sales, as this would discourage people from buying them due to the increased cost. Secondly, banning cigarette advertisements would limit their exposure and decrease their visibility to the public. Last but not least, providing free support, counselling or resources for individuals who want to quit smoking can encourage them to use them, which could be an effective measure for reducing smoking rates.
+
+\printbibliography
+
+\end{document}
